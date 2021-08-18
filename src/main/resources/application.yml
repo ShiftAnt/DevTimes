@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: woong
+    password: woongwoong1!
+    url: jdbc:mariadb://localhost/devtimes_test
+  jpa:
+    hibernate:
+      #ddl-auto: none
+server:
+  port: 8000
