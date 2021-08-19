@@ -1,6 +1,5 @@
-package com.woong.devtimes
+package com.woong.devtimes.restapis
 
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -17,7 +16,6 @@ class RestApiTests @Autowired constructor (
 ) {
     @Test
     fun memberRestTest() {
-        mockMvc
         mockMvc.get("/api/v1/member/{id}", "temp") { accept = MediaType.APPLICATION_JSON }.andExpect { status { isOk() } }.andDo { print() }
     }
 }

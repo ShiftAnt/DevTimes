@@ -1,6 +1,6 @@
 package com.woong.devtimes.controller
 
-import com.woong.devtimes.model.dto.Member
+import com.woong.devtimes.model.dto.MemberDto
 import com.woong.devtimes.service.MemberService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -16,7 +16,7 @@ class MemberController (
         ) {
 
     @GetMapping("/{id}")
-    fun viewMember(@PathVariable id: String) : ResponseEntity<Member> {
+    fun viewMember(@PathVariable id: String) : ResponseEntity<MemberDto> {
         return ResponseEntity(service.findById(id), HttpStatus.OK)
     }
 }

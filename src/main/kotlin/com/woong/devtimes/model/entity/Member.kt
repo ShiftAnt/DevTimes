@@ -1,9 +1,12 @@
-package com.woong.devtimes.model.dto
+package com.woong.devtimes.model.entity
 
-import com.fasterxml.jackson.annotation.JsonIgnore
 import java.time.LocalDateTime
+import javax.persistence.*
 
-data class Member (
+@Table(name = "member")
+@Entity
+class Member (
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var no: Int,
     var id: String,
     var pw: String,
