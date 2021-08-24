@@ -10,4 +10,8 @@ interface MemberMapper {
 
     @Mapping(target = "authStatus", expression = "java(member.getAuthStatus() ? 'Y' : 'N')")
     fun memberToMemberDto(member: Member): MemberDto
+
+    @Mapping(target = "authStatus", expression = "java(memberDto.getAuthStatus() == 'Y' ? true : false)")
+    fun memberDtoToMember(memberDto: MemberDto): Member
+
 }

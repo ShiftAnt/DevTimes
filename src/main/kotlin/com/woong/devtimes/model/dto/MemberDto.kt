@@ -9,7 +9,6 @@ data class MemberDto (
     var no: Int = 0,
     var id: String = "",
     var pw: String = "",
-    var email: String = "",
     var name: String = "",
     var phone: String = "",
     var address: String = "",

@@ -11,8 +11,12 @@ class MemberServiceImpl (
     val memberMapper: MemberMapper
 ): MemberService {
 
-    override fun findById(id: String): MemberDto? {
+    override fun findById(id: String): MemberDto {
         return  memberMapper.memberToMemberDto(repo.findById(id))
+    }
+
+    override fun registerMember(memberDto: MemberDto) {
+        repo.save(memberMapper.memberDtoToMember(memberDto))
     }
 
 }

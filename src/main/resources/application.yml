@@ -6,6 +6,6 @@ spring:
     url: jdbc:mariadb://localhost/devtimes_test
   jpa:
     hibernate:
-      #ddl-auto: none
+      ddl-auto: create-drop
 server:
   port: 8000
