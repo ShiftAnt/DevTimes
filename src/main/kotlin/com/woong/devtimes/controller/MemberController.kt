@@ -25,4 +25,16 @@ class MemberController (
         service.registerMember(memberDto)
         return restApiResponse.response(data = null)
     }
+
+    @DeleteMapping("/delete/{id}")
+    fun deleteMamber(@PathVariable id: String) : ResponseEntity<ResponseDto<MemberDto>> {
+        service.deleteMember(id)
+        return restApiResponse.response(data = null)
+    }
+
+    @PutMapping("/update")
+    fun updateMember(@RequestBody memberDto: MemberDto): ResponseEntity<ResponseDto<MemberDto>> {
+        service.updateMember(memberDto)
+        return restApiResponse.response(data = null)
+    }
 }

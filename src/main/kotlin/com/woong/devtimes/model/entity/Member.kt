@@ -20,9 +20,9 @@ class Member (
     var address: String,
     var intro: String,
     var description: String,
-    @ColumnDefault(value = "false")
-    var authStatus: Boolean,
+    @ColumnDefault(value = "'N'")
+    var authStatus: Char,
     var authDatetime: LocalDateTime?,
-    @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(updatable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     var createDateTime: LocalDateTime
 )

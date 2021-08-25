@@ -5,7 +5,6 @@ import java.time.LocalDateTime
 
 
 data class MemberDto (
-    @set:JsonIgnore
     var no: Int = 0,
     var id: String = "",
     var pw: String = "",
