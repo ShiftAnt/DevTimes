@@ -1,6 +1,5 @@
 package com.woong.devtimes.model.entity
 
-import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -17,10 +16,10 @@ class Comment (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var no: Int,
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "board_no")
     var board: Board,
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "member_no")
     var member: Member,
     var content: String = "",
     var deleteStatus: Boolean = false,

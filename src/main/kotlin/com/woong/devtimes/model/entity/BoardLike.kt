@@ -17,9 +17,9 @@ class BoardLike (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var no: Int,
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "board_no")
     var board: Board,
-    var check: Boolean = true,
+    var checkStatus: Boolean = true,
     @Column(updatable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     var createDateTime: LocalDateTime = LocalDateTime.now()
 )

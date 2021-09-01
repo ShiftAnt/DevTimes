@@ -17,13 +17,13 @@ class CommentLike (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var no: Int,
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "comment_no")
     var comment: Comment,
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "member_no")
     var member: Member,
     @Column(nullable = false)
-    var check: Boolean,
+    var checkStatus: Boolean,
     @Column(updatable = false)
     var createDateTime: LocalDateTime = LocalDateTime.now()
 

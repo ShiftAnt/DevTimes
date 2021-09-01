@@ -24,5 +24,14 @@ class Member (
     var authStatus: Char,
     var authDatetime: LocalDateTime?,
     @Column(updatable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
-    var createDateTime: LocalDateTime
+    var createDateTime: LocalDateTime,
+
+    @OneToMany(mappedBy = "member")
+    var boards: List<Board> = ArrayList(),
+    @OneToMany(mappedBy = "member")
+    var comments: List<Comment> = ArrayList(),
+    @OneToMany(mappedBy = "member")
+    var commentLikes: List<CommentLike> = ArrayList(),
+
+
 )

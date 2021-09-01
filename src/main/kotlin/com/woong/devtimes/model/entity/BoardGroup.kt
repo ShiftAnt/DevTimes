@@ -14,7 +14,7 @@ class BoardGroup (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var no: Int,
     var name: String,
-    var order: Int,
+    var seq: Int,
     @OneToMany(mappedBy = "boardGroup")
-    var boards: List<Board> = ArrayList<Board>()
+    var boards: List<Board> = ArrayList()
 )

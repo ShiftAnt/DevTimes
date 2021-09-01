@@ -18,11 +18,11 @@ class Board (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var no: Int,
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "board_group_no")
     var boardGroup: BoardGroup,
 
     @ManyToOne
-    @JoinColumn(name = "no")
+    @JoinColumn(name = "member_no")
     var member: Member,
     var title: String = "",
     var content: String = "",
