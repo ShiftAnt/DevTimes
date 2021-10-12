@@ -25,5 +25,5 @@ class Comment (
     var deleteStatus: Boolean = false,
 
     @OneToMany(mappedBy = "comment")
-    val members: List<CommentLike> = ArrayList()
+    var commentLikes: List<CommentLike> = ArrayList()
 )
