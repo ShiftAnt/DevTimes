@@ -24,6 +24,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation ("org.mapstruct:mapstruct:1.4.2.Final")
+    implementation("org.springdoc:springdoc-openapi-ui:1.5.11")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
