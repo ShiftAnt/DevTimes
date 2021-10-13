@@ -7,7 +7,7 @@ import javax.transaction.Transactional
 
 @Repository
 interface MemberRepository : JpaRepository<Member, Int> {
-    fun findById(id: String): Member
+    fun findById(id: String): Member?
 
     @Transactional
     fun deleteById(id: String): Long
