@@ -18,13 +18,6 @@ class MemberTest @Autowired constructor(
     val mockMvc: MockMvc,
     val objectMapper: ObjectMapper
 ) {
-    companion object {
-        @AfterAll
-        @JvmStatic
-        fun doNotFinishTest() {
-            while (true) {}
-        }
-    }
     @AfterEach
     fun deleteMembersTest() {
         mockMvc.delete("/api/v1/member/delete/temp@temp.com"){ contentType = MediaType.APPLICATION_JSON}

@@ -10,7 +10,7 @@ import org.mapstruct.MappingTarget
 interface MemberMapper {
 
     @Mapping(target = "authStatus")
-    fun memberToMemberDto(member: Member): MemberDto
+    fun memberToMemberDto(member: Member?): MemberDto
 
     @Mapping(target = "authStatus")
     fun memberDtoToMember(memberDto: MemberDto): Member

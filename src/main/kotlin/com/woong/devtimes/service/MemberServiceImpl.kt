@@ -12,23 +12,38 @@ class MemberServiceImpl (
     val memberMapper: MemberMapper
 ): MemberService {
 
-    override fun findById(id: String): MemberDto {
-        return  memberMapper.memberToMemberDto(repo.findById(id))
+    override fun findById(id: String): MemberDto? {
+        return memberMapper.memberToMemberDto(repo.findById(id))
     }
 
-    override fun registerMember(memberDto: MemberDto) {
-        repo.save(memberMapper.memberDtoToMember(memberDto))
+    override fun registerMember(memberDto: MemberDto): Boolean {
+        return try {
+            repo.save(memberMapper.memberDtoToMember(memberDto))
+            true
+        } catch (e: Exception) {
+            false
+        }
     }
 
     @Transactional
-    override fun updateMember(memberDto: MemberDto) {
-        val targetMember = repo.findById(memberDto.id)
-        memberMapper.updateMemberFromMemberDto(memberDto, targetMember)
-        repo.save(targetMember)
+    override fun updateMember(memberDto: MemberDto): Boolean {
+        return try {
+            val targetMember = repo.findById(memberDto.id)!!
+            memberMapper.updateMemberFromMemberDto(memberDto, targetMember)
+            repo.save(targetMember)
+            true
+        } catch (e: Exception) {
+            false
+        }
     }
 
-    override fun deleteMember(id: String) {
-        repo.deleteById(id)
+    override fun deleteMember(id: String): Boolean {
+        return try {
+            repo.deleteById(id)
+            true
+        } catch (e: Exception) {
+            false
+        }
     }
 
 }
