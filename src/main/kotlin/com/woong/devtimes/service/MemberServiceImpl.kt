@@ -4,7 +4,8 @@ import com.woong.devtimes.model.dto.MemberDto
 import com.woong.devtimes.model.mapper.MemberMapper
 import com.woong.devtimes.repository.MemberRepository
 import org.springframework.stereotype.Service
-import javax.transaction.Transactional
+import org.springframework.transaction.annotation.Isolation
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class MemberServiceImpl (
@@ -25,7 +26,7 @@ class MemberServiceImpl (
         }
     }
 
-    @Transactional
+    @Transactional(isolation=Isolation.READ_COMMITTED, )
     override fun updateMember(memberDto: MemberDto): Boolean {
         return try {
             val targetMember = repo.findById(memberDto.id)!!
